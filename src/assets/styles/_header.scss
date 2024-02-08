@@ -1,0 +1,131 @@
+@import 'mixins';
+@import 'vars';
+
+.nav {
+    background-color: #f7af45;
+    min-height: 75px;
+    position: relative;
+    @include flex-nav();
+}
+.logo-box {
+max-width: 404px;
+}
+.logo {
+     max-width: 90%;
+}
+.link-nav {
+    margin: 2%;
+}
+.nav-link {
+    font-size: clamp(14px, 2vw, 20px);
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $colorText;
+    transition: color 0.3s linear;
+   
+
+   
+    &:visited {
+        color: $colorText;
+    }
+    &:hover {
+        color: #f76008;
+    }
+}
+
+.right-header-part {
+    position: relative;
+    min-width: 15%;
+    @include flex-nav();
+    gap: 20px;
+    padding-right: 15px;
+}
+.telNum {
+    position: absolute;
+    display: flex;
+    gap: 20px;
+    font-weight: 600;
+    right: 5px;
+    bottom: -40px;
+    transition: all 0.2s linear;   
+    
+    &:hover {
+        color: #f76008;
+        cursor: pointer;
+    }
+    &:hover path {
+        fill: #f76008;
+    }
+}
+.one-element {
+    display: none;
+    _:hover {
+        cursor: pointer;
+    }
+}
+
+.header__checkbox {
+    position: absolute;
+    visibility: hidden;
+    left: -9999999px;
+
+    &:checked~.drop-down-menu {
+        right: 0;
+        display: block;
+    }
+}
+
+.drop-down-menu {
+    position: absolute;
+    top: 100px;
+    padding: 5% 5% 5% 1%;
+    width: 300px;
+    background: linear-gradient(rgba(255, 255, 255, 0) 0%, rgba(400, 215, 100, 50) 0%, #f7af45 70.36%);
+    z-index: 1;
+    transition: all 0.6s;
+    display: none;
+}
+
+.menu li {
+    padding: 3%;
+}
+.menu>li>a {    
+    @include fontText($colorText, 400, 1.4rem);
+    text-align: left;
+    display: block;
+    margin: 3%;
+}
+
+// .menu>li:first-child a {
+//     @include font($colorText, 700, 1rem);
+//     padding: 0%;
+//     margin-bottom: 0%;
+// }
+
+.sub-menu-link {
+    
+    @include fontText($colorText, 400, 1.2rem);
+    display: block;
+    text-align: left;
+    margin-left: 10%;
+    transition: all 0.2s;
+    &:hover{
+        color: $colorSelectSite;
+    }
+}
+
+ 
+
+.right-header-part a:first-child:hover .drop-down-menu {
+    display: block;
+}
+
+// .sub-menu>li {
+//     // margin-left: %;
+// }
+@media (min-width: 320px) and (max-width: 767px) {
+   
+    .slider-container {
+        display: none;
+    }
+}

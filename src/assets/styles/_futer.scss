@@ -1,0 +1,79 @@
+@import "mixins";
+@import "vars";
+
+.logo-box {
+  max-width: 404px;
+  }
+  .logo {
+       max-width: 90%;
+  }
+.footer {
+  background-color: #f7af45;
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 2fr;
+  gap: 27px;
+  margin-bottom: 10px;
+  border-top: 1px solid #e7e7e7;
+  box-shadow: 0px 10px 30px 0px rgba(255, 255, 255, 0.25);
+  margin-top: -2px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  &__item {
+    @include flex-column-left();
+    align-items: flex-start;
+    padding: 15px;
+  }
+  &__text {
+    @include fontText(#4d5053, 400, 22px);
+    line-height: 150%; /* 33px */
+    letter-spacing: 0.22px;
+    max-width: 393px;
+    text-align: left;
+    margin-bottom: 31px;
+  }
+  &__heading {
+    @include fontHeader(#000000, 600, 25px);
+  
+  }
+  &__block-icons {
+    @include flex-alignment(54px);  
+    & svg:hover path{        
+        fill: #f76008;
+    } 
+    
+    
+  }
+  &__link {
+    transition: color 0.3s linear;
+
+    @include fontText(#4d5053, 400, 22px);
+    line-height: 300%; /* 66px */
+    letter-spacing: 0.22px;
+    &:hover {
+        color: #f76008;
+    }
+  }
+  &__logo {
+    margin-bottom: 18px;
+  }
+  &__contacts-link h3{
+    transition: color 0.3s linear;
+
+    &:visited {
+      color: $colorText;
+  }
+  &:hover {
+      color: #f76008;
+  }
+  }
+}
+@media (min-width: 767px) and (max-width: 850px) {
+  .footer {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+}
+@media (min-width: 320px) and (max-width: 767px) {
+  .footer {
+    grid-template-columns: 1fr;
+  }
+}

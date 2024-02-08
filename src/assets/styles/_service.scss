@@ -1,0 +1,34 @@
+@import 'mixins';
+@import 'vars';
+.service_group {
+  margin: 0 auto;
+  padding: 40px 10px;
+  // max-width: 600px;
+  // background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 0.01%, #FABA3E 62.36%);
+  &_name {
+    font-size: 42px;
+    padding: 40px 20px;
+    text-align: center;
+    line-height: 110%;
+  }
+  &_text {
+    max-width: 700px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    font-size: 18px;
+  }
+  }
+  .cost {
+    margin-top: 15px;
+    color: #9c0803;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .more {   
+    font-size: 18px;
+    font-weight: 700;   
+    padding: 10px; 
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.00) 0.01%, #FABA3E 62.36%);
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
