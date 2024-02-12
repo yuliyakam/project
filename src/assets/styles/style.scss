@@ -52,11 +52,14 @@ a {
     line-height: 1.5;
 }
 .about-text {
-    font-size: clamp(16px, 5vw, 24px);
+    font-size: clamp(20px, 5vw, 24px);
+    font-weight: 700;
     padding: 0 5px;
     line-height: 1.5;
     max-width: 900px;
     margin: 10px auto;
+    box-shadow: 8px 4px 20px #defc5a;
+    text-shadow: 8px 4px 5px #defc5a;
 }
 .card {
     display: grid;
@@ -97,6 +100,33 @@ a {
         font-size: 16px;
     }
 }
+.table {
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+.row {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.00) 0.01%, #FABA3E 62.36%);    
+}
+.column{
+    padding: 5px;
+}
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;    
+    font-size: clamp(20px, 5vw, 24px);
+    font-weight: 500;
+    padding: 0 5px;
+    line-height: 1.5;
+    max-width: 400px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    & li::before {
+        content: "* ";
+    }
+}
+
 .map {
     margin: 0 auto;    
 }

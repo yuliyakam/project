@@ -1,9 +1,31 @@
 @import "mixins";
 @import "vars";
 
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: 8px 4px 20px #defc5a;
+  margin-bottom: 30px;
+
+  &__left {
+    @include flex-column-left();
+    align-items: flex-start;
+    padding: 15px;
+  }
+}
+.slogan__heading {
+  max-width: 600px;
+  font-size: clamp(28px, 5vw, 45px);
+    text-align: center;   
+    line-height: 1.5;
+    letter-spacing: 0.8px;
+    text-shadow: 8px 4px 5px #defc5a;
+    padding: 0 5px;
+
+}
 .form {
   @include flex-column-left();
-  gap: 20px;
+  gap: 10px;
   margin: 0 auto;
 
   margin-bottom: 40px;
@@ -23,8 +45,9 @@
     border-bottom: 1px solid #4d5053;
     border-right: 1px solid #4d5053;
   }
-  & textarea {
+  &__textarea {
     padding: 5px;
+    width: 290px;
   }
   &__title {
     color: black;
@@ -46,10 +69,18 @@
     }
   }
 }
+.invalid {
+  color: #f30707;
+  font-size: clamp(12px, 3vw, 16px);
+  margin-bottom: 10px;
+}
 .agreement {
+  max-width: 500px;
+  padding: 0 10px;
   display: flex;
   gap: 10px;
   align-items: center;
+  justify-content: center;
 }
 @media (min-width: 320px) and (max-width: 615px) {
   .form {

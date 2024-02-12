@@ -25,10 +25,10 @@
       <div></div>
       <div class="footer__item">
         <router-link :to="'/contacts'" class="footer__contacts-link"><h3 class="footer__heading footer__logo">Контакты</h3></router-link>
-        <p class="footer__text">
+        <p class="footer__text mb">
         г.Краснодар СНТ Авиатор 15км Ростовского шоссе Вишневая 74 </p>
-        <a href="mailto:yulyakam85@mail.ru" class="footer__text" title="Написать на email">yulyakam85@mail.ru</a>
-        <a href="tel:+79601039766" title="Позвонить на 8 960 103 97 66" class="footer__text">8 960 103 97 66</a>
+        <a href="mailto:yulyakam85@mail.ru" class="footer__link" title="Написать на email">yulyakam85@mail.ru</a>
+        <a href="tel:+79601039766" title="Позвонить на 8 960 103 97 66" class="footer__link">8 960 103 97 66</a>
       </div>
     </footer>
   </template>

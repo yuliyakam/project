@@ -67,6 +67,9 @@
   }
   }
 }
+.mb {
+  margin-bottom: 10px;
+}
 @media (min-width: 767px) and (max-width: 850px) {
   .footer {
     grid-template-columns: 2fr 1fr 1fr;
