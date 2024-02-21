@@ -2,9 +2,9 @@
   <form @submit.prevent="formSend" class="form center" id="form">
     <h2 class="form__title">Форма обратной связи</h2>
     <label class="form__lable"
-      >Ваше имя <input type="text" v-model.lazy="data.userName"
+      >Ваше имя <input type="text" v-model.lazy="formData.userName"
     /></label>
-    <!-- {{ v$.userName.$errors[0].$message }} -->
+   
     <small v-if="v$.userName.$error && v$.userName.$dirty" class="invalid"
       >Поле должно быть заполнено
     </small>
@@ -13,10 +13,10 @@
       <input
         type="tel"
         placeholder="В виде 900 000 00 00"
-        v-model.lazy="data.userTel"
+        v-model.lazy="formData.userTel"
         v-imask="phoneNumberMask"
     /></label>
-    <!-- {{ v$.userTel.$errors[0].$message }} -->
+    
     <small v-if="v$.userTel.$error && v$.userName.$dirty" class="invalid"
       >Поле должно быть заполнено
     </small>
@@ -24,23 +24,23 @@
     <label class="form__lable"
       >Ваше сообщение
       <textarea
-        v-model.lazy="data.userMsg"
+        v-model.lazy="formData.userMsg"
         placeholder="Поле не обязательно к заполнению. Если оно будет пустым, мы просто Вам перезвоним"
         class="form__textarea"
       ></textarea>
     </label>
     <div class="agreement">
-      <input type="checkbox" :value="data.flag" @click="checkFlag" id="check" />
+      <input type="checkbox" :value="formData.flag" @click="checkFlag" id="check" />
       <label for="check"
         >Даю своё согласие на обработку персональных данных</label
       >
     </div>
 
-    <button :disabled="!data.flag" class="form__btn" type="submit">
+    <button :disabled="!formData.flag" class="form__btn" type="submit">
       Отправить
     </button>
     <small class="form__lable"
-      >Если форма отправилась удачно, вы увидите сообщение об отправке</small
+      >Если данные будут успешно отправлены, Вы увидите сообщение об этом</small
     >
   </form>
 </template>
@@ -54,7 +54,7 @@ import CHAT_ID from "@/configBot";
 
 export default {
   setup() {
-    const data = reactive({
+    const formData = reactive({
       userName: "",
       userTel: "",
       userMsg: "",
@@ -66,8 +66,8 @@ export default {
         userTel: { required },
       };
     });
-    const v$ = useVuelidate(rules, data);
-    return { data, v$ };
+    const v$ = useVuelidate(rules, formData);
+    return { formData, v$ };
   },
 
   data() {
@@ -76,6 +76,7 @@ export default {
         mask: "+{7}(000) 000 00 00",
         lazy: true,
       },
+      successfulSendMsg: '',
     };
   },
   directives: {
@@ -85,20 +86,20 @@ export default {
   methods: {
     checkFlag() {
       const btnSend = document.querySelector(".form__btn");
-      this.data.flag = !this.data.flag;
-      btnSend.disabled = `${this.data.flag}`;
+      this.formData.flag = !this.formData.flag;
+      btnSend.disabled = `${this.formData.flag}`;
     },
     async formSend() {
       this.v$.$validate();
       if (this.v$.$invalid) {
-        // this.v$.$touch()
+        
         alert("Неверно заполненные поля!");
         return;
       } else {
         let msg = `<b>Заявка с сайта</b>\n
-      <b>Отправитель: ${this.data.userName}</b>\n
-      <b>Номер тел: ${this.data.userTel}</b>\n
-      <b>Сообщение: ${this.data.userMsg}</b>\n`;
+      <b>Отправитель: ${this.formData.userName}</b>\n
+      <b>Номер тел: ${this.formData.userTel}</b>\n
+      <b>Сообщение: ${this.formData.userMsg}</b>\n`;
 
         const response = await this.$axios
           .post(CHAT_ID.URI_API, {
@@ -107,14 +108,14 @@ export default {
             text: msg,
           })
           .then((res) => {
-            this.data.userName = "";
-            this.data.userTel = "";
-            this.data.userMsg = "";
-            this.data.flag = false;
-            this.unCorrectSend = false;
+            this.formData.userName = "";
+            this.formData.userTel = "";
+            this.formData.userMsg = "";
+            this.formData.flag = false;           
 
             document.getElementById("check").checked = false;
-            alert("Сообщение отправлено");
+            alert("Сообщение отправлено");        
+            
           })
           .catch((error) => {
             alert("Произошла ошибка " + error);
@@ -124,4 +125,4 @@ export default {
   },
 };
 </script>
-<style lang="scss" scoped></style>
+

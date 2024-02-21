@@ -10,7 +10,7 @@
     </div>
 
     <button class="prev-button" @click="showPreviousSlide">&lt;</button>
-    <button class="next-button" @click="showNextSlide">&gt</button>
+    <button class="next-button" @click="showNextSlide">&gt;</button>
     <div class="buttons">
       <div
         v-for="(item, index) in btnArr"
@@ -28,7 +28,12 @@ import img2 from "@/assets/images/slide2.jpg";
 import img3 from "@/assets/images/slide3.jpg";
 
 export default {
-  
+  created() {
+    // Автопролистывание слайдера
+    setInterval(() => {
+        this.showNextSlide()
+      }, 3000);
+  },
   data() {
     return {
       slideIndex: 0,
@@ -71,15 +76,11 @@ export default {
       this.updateSlider();
     },
     // Функция для обновления отображения слайдера
-    updateSlider() {
+    updateSlider() {      
       return this.slides[this.slideIndex];
     },  
-    // Автопролистывание
-    // setInterval() {
-    //   () =>{
-    //     this.showNextSlide;
-    //   }, 3000
-    // } 
+    
+  
 }
 }
 </script>

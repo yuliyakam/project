@@ -18,6 +18,9 @@ html {
     box-sizing: border-box;
     list-style: none;
 }
+.none {
+    display: none;
+}
 a {
     text-decoration: none;
 }
@@ -103,6 +106,7 @@ a {
 .table {
     margin: 0 auto;
     margin-bottom: 40px;
+    margin-top: 30px;
 }
 .row {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.00) 0.01%, #FABA3E 62.36%);    

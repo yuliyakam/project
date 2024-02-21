@@ -20,7 +20,7 @@
             </article>
         </div>  
         <a class="card_subtitle-link more" href="https://suprotec.ru/suprotek-rastochka-cilindrov-v-dvigatele" title="Почитать интересное на тему">
-                    Узнать больше о процедуре &#8594
+                    Узнать больше о процедуре &#8594;
                 </a> 
     </section>
 
@@ -41,7 +41,7 @@
             </article>
         </div>
         <a class="card_subtitle-link more" href="https://www.dieselmotors-spb.ru/informatsiya/kak-shlifuyut-kolenvaly.html" title="Почитать интересное на тему">
-                    Узнать больше о процедуре &#8594
+                    Узнать больше о процедуре &#8594;
                 </a> 
       </section>
   
@@ -62,7 +62,7 @@
             </article>
         </div>
         <a class="card_subtitle-link more" href="https://www.stankoff.ru/blog/post/566" title="Почитать интересное на тему">
-                    Узнать больше о процедуре &#8594
+                    Узнать больше о процедуре &#8594;
                 </a> 
       </section>       
       
@@ -74,7 +74,7 @@ import HeaderComp from '@/components/HeaderComp.vue';
 import FuterComp from '@/components/FuterComp.vue';
 
 export default {
-  name: 'Contact',
+  name: 'Service',
   data() {
     return {
       cardsByBlog: [

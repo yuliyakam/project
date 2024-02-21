@@ -11,9 +11,9 @@
                 <router-link
                     :to="getLinkUrl(card.path)" @click="scrollToBlock(card.path)"
                     class="card_subtitle-link" title="Узнать подробнее об услуге">
-                    <h2 class="card_subtitle">&#8594 {{ card.title }}</h2>
+                    <h2 class="card_subtitle">&#8594; {{ card.title }}</h2>
                 </router-link>
-                <img :src="card.img" alt="" class="card_img" />
+                <img :src="card.img" :alt="card.title"  class="card_img" />
             </div>
         </div> 
     <h3 class="about-text">Таблица приблизительных расчетов</h3>  
@@ -104,7 +104,7 @@ export default {
                 {                    
                     path: {path: '/services', hash:'#card1'},
                     title: 'Работы с блоком цилиндров',
-                    img: require("@/assets/images/engin.jpg")
+                    img: require("@/assets/images/workWithBlock.jpeg")
                 },
                 {                
                     path: {path: '/services', hash:'#card2'},

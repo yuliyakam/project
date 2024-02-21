@@ -1,6 +1,15 @@
 @import 'mixins';
 @import 'vars';
+.changeIcon {
+    width: 50px;
+    height: 13px;
+    position: absolute;
+    color: #e00a0a;
+    z-index: 10000;
+    right: 15px;
+    bottom: 10px;
 
+}
 .map {
     position: relative;
     height: 400px;
