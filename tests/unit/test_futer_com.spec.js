@@ -1,28 +1,38 @@
-import { shallowMount } from '@vue/test-utils'
-import FuterComp from '@/components/FuterComp.vue'
-import { createStore } from 'vuex';
+import FuterComp from "@/components/FuterComp.vue";
+import App from "@/App.vue";
+import ServicesComp from "@/views/ServicesComp.vue";
+import { createStore } from "vuex";
+import { mount } from "@vue/test-utils";
+import router from "@/router/index.js";
 
 const store = createStore({
-    state() {
-        return {
-            linkArr: []
-        }
-    }
+  state() {
+    // Заглушка для vuex
+    return {
+      linkArr: [],
+    };
+  },
 });
 
-describe('FuterComp.vue', () => {
-  it('Rule render component Futer', () => {   
-    const wrapper = shallowMount(FuterComp, {
-        global: {
-            stubs: [
-                'router-link'
-            ],
-            plugins: [store]            
-        },
-        
+describe("Router in FuterComp mount in App Services.comp", () => {
+  it("Rendering component with routing", async () => {
+    router.push("/services");
+    await router.isReady();
+    const wrapper = mount(App, {
+      global: {
+        plugins: [router, store],
+      },
     });
-    // Убеждаемся в корректной отрисовке компонента
-    console.log(wrapper.html());
-  }) 
-  
-})
+    expect(wrapper.findComponent(ServicesComp).exists()).toBe(true);
+  });
+  it("Test 'to' atribute from router-link", () => {
+    const wrapper = mount(FuterComp, {
+      global: {
+        plugins: [store],
+      },
+    });
+    expect(wrapper.find(".footer__contacts-link").attributes().to).toEqual(
+      "/contacts"
+    );
+  });
+});

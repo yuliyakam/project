@@ -16,18 +16,17 @@
 .slogan__heading {
   max-width: 600px;
   font-size: clamp(28px, 5vw, 45px);
-    text-align: center;   
+    text-align: left;   
     line-height: 1.5;
     letter-spacing: 0.8px;
     text-shadow: 8px 4px 5px #defc5a;
-    padding: 0 5px;
+    padding: 0 5px 0 15px;
 
 }
-.form {
+.form {  
   @include flex-column-left();
   gap: 10px;
   margin: 0 auto;
-
   margin-bottom: 40px;
   background: linear-gradient(
     180deg,

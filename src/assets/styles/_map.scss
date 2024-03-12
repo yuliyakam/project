@@ -52,3 +52,11 @@
         font-weight: 700;
     }
 }
+@media (max-width: 390px) { 
+    .map {
+        height: 600px;
+    }  
+    .map__info {
+        width: 70vw;        
+    }
+}

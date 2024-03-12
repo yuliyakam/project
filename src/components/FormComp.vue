@@ -1,10 +1,10 @@
 <template>
-  <form @submit.prevent="formSend" class="form center" id="form">
+  <form @submit.prevent="formSend" class="form" id="form">
     <h2 class="form__title">Форма обратной связи</h2>
     <label class="form__lable"
       >Ваше имя <input type="text" v-model.lazy="formData.userName"
     /></label>
-   
+
     <small v-if="v$.userName.$error && v$.userName.$dirty" class="invalid"
       >Поле должно быть заполнено
     </small>
@@ -16,7 +16,7 @@
         v-model.lazy="formData.userTel"
         v-imask="phoneNumberMask"
     /></label>
-    
+
     <small v-if="v$.userTel.$error && v$.userName.$dirty" class="invalid"
       >Поле должно быть заполнено
     </small>
@@ -30,12 +30,19 @@
       ></textarea>
     </label>
     <div class="agreement">
-      <input type="checkbox" :value="formData.flag" @click="checkFlag" id="check" />
+      <input
+        type="checkbox"
+        :value="formData.flag"
+        @click="checkFlag"
+        id="check"
+      />
       <label for="check"
         >Даю своё согласие на обработку персональных данных</label
       >
     </div>
-
+    <router-link class="footer__link" :to="'/privacyPolicy'" rel="nofollow"
+      >Политика конфиденциальности</router-link
+    >
     <button :disabled="!formData.flag" class="form__btn" type="submit">
       Отправить
     </button>
@@ -76,7 +83,7 @@ export default {
         mask: "+{7}(000) 000 00 00",
         lazy: true,
       },
-      successfulSendMsg: '',
+      successfulSendMsg: "",
     };
   },
   directives: {
@@ -92,7 +99,6 @@ export default {
     async formSend() {
       this.v$.$validate();
       if (this.v$.$invalid) {
-        
         alert("Неверно заполненные поля!");
         return;
       } else {
@@ -111,11 +117,10 @@ export default {
             this.formData.userName = "";
             this.formData.userTel = "";
             this.formData.userMsg = "";
-            this.formData.flag = false;           
+            this.formData.flag = false;
 
             document.getElementById("check").checked = false;
-            alert("Сообщение отправлено");        
-            
+            alert("Сообщение отправлено");
           })
           .catch((error) => {
             alert("Произошла ошибка " + error);
@@ -125,4 +130,3 @@ export default {
   },
 };
 </script>
-

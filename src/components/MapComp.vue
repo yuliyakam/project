@@ -1,6 +1,5 @@
 <template>
   <div class="map">
-    <!-- <div class="changeIcon"></div> -->
     <div class="map__info">
       <h2>Наш адрес:</h2>
       <p class="map__info_text">
@@ -28,7 +27,8 @@
         href="mailto:yulyakam85@mail.ru"
         class="map__info_text"
         title="Написать на email"
-        ><svg class="map__info_icon"
+        ><svg
+          class="map__info_icon"
           xmlns="http://www.w3.org/2000/svg"
           height="20"
           width="20"
@@ -56,22 +56,19 @@
 </template>
 
 <script>
-// import "leaflet/dist/leaflet.css";
-import { LMap, LTileLayer, LMarker } from "@vue-leaflet/vue-leaflet";  
+import { LMap, LTileLayer, LMarker } from "@vue-leaflet/vue-leaflet";
 
 export default {
- 
   components: {
     LMap,
     LTileLayer,
     LMarker,
-  }, 
-  
+  },
+
   data() {
     return {
       zoom: 10,
     };
   },
-
 };
 </script>

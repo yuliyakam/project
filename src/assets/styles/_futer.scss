@@ -32,7 +32,7 @@
     margin-bottom: 31px;
   }
   &__heading {
-    @include fontHeader(#000000, 600, 25px);
+    @include fontHeader(#000000, 600, 25px);  
   
   }
   &__block-icons {
@@ -47,10 +47,14 @@
     transition: color 0.3s linear;
 
     @include fontText(#4d5053, 400, 22px);
+    text-align: left;
     line-height: 300%; /* 66px */
     letter-spacing: 0.22px;
     &:hover {
         color: #f76008;
+    }
+    &:last-of-type {
+      line-height: 100%;
     }
   }
   &__logo {

@@ -5,7 +5,7 @@
         v-if="index == slideIndex"
         class="slide-img"
         :src="item"
-        alt="photo"
+        alt="photo in slider about type of jobs"
       />
     </div>
 
@@ -28,16 +28,10 @@ import img2 from "@/assets/images/slide2.jpg";
 import img3 from "@/assets/images/slide3.jpg";
 
 export default {
-  created() {
-    // Автопролистывание слайдера
-    setInterval(() => {
-        this.showNextSlide()
-      }, 3000);
-  },
   data() {
     return {
       slideIndex: 0,
-      sliderWidth: 0,
+      // sliderWidth: 0,
       slides: [img1, img2, img3],
       btnArr: new Array(3),
       slideCount: 3,
@@ -76,11 +70,9 @@ export default {
       this.updateSlider();
     },
     // Функция для обновления отображения слайдера
-    updateSlider() {      
+    updateSlider() {
       return this.slides[this.slideIndex];
-    },  
-    
-  
-}
-}
+    },
+  },
+};
 </script>

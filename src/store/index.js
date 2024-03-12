@@ -18,7 +18,8 @@ export default createStore({
         id:3,
         name: 'Контакты',
         url: '/contacts',
-      },      
+      },  
+    
     ],
   },
   getters: {
