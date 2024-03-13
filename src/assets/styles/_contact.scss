@@ -49,10 +49,12 @@
     width: 290px;
   }
   &__title {
+    font-size: clamp(20px, 5vw, 24px);
     color: black;
     margin-bottom: 20px;
   }
   &__lable {
+    font-size: clamp(16px, 5vw, 20px);
     color: #4d5053;
   }
   &__btn {

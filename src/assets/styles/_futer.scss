@@ -24,8 +24,8 @@
     padding: 15px;
   }
   &__text {
-    @include fontText(#4d5053, 400, 22px);
-    line-height: 150%; /* 33px */
+    @include fontText(#373a3d, 400, 22px);
+    line-height: 150%; /* 33px #4d5053*/
     letter-spacing: 0.22px;
     max-width: 393px;
     text-align: left;
@@ -46,7 +46,7 @@
   &__link {
     transition: color 0.3s linear;
 
-    @include fontText(#4d5053, 400, 22px);
+    @include fontText(#373a3d, 400, 22px);
     text-align: left;
     line-height: 300%; /* 66px */
     letter-spacing: 0.22px;

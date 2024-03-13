@@ -21,10 +21,10 @@
       </svg>
         <a href="tel:+79601039766" title="Позвонить на 8 960 103 97 66" class="map__info_text" style="color: black;">8 960 103 97 66</a>
 
-        <table id="tablepress-1" class="table tablepress-id-1">
+        <table class="table">
 <thead>
 <tr class="row">
-	<th class="column about-text">Услуга</th><th class="column about-text">Цена</th>
+	<th class="about-text">Услуга</th><th class="about-text">Цена</th>
 </tr>
 </thead>
 <tbody>

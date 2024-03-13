@@ -36,7 +36,7 @@ a {
 .content {
    
     background-image: url(../images/fon.jpg);
-    filter: saturate(60%);
+    filter: saturate(50%);
     // height: 100vh;
     padding-top: 40px;
     padding-bottom: 75px;
@@ -65,7 +65,7 @@ a {
     max-width: 900px;
     margin: 10px auto;
     box-shadow: 8px 4px 20px #defc5a;
-    text-shadow: 8px 4px 5px #defc5a;
+    text-shadow: 2px 2px 5px #defc5a;
 }
 .card {
     display: grid;
@@ -116,6 +116,7 @@ a {
 }
 .column{
     padding: 5px;
+    font-size: 1.3rem;   
 }
 .list {
     display: flex;
@@ -129,6 +130,8 @@ a {
     max-width: 400px;
     margin: 0 auto;
     margin-bottom: 40px;
+    box-shadow: 8px 4px 20px #defc5a;
+    text-shadow: 2px 2px 5px #defc5a;
     & li::before {
         content: "* ";
     }
