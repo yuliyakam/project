@@ -57,7 +57,7 @@ import { computed, reactive } from "vue";
 import { useVuelidate } from "@vuelidate/core";
 import { required } from "@vuelidate/validators";
 import { IMaskComponent, IMaskDirective } from "vue-imask";
-import CHAT_ID from "@/configBot";
+// import CHAT_ID from "@/configBot";
 
 export default {
   setup() {
@@ -107,9 +107,16 @@ export default {
       <b>Номер тел: ${this.formData.userTel}</b>\n
       <b>Сообщение: ${this.formData.userMsg}</b>\n`;
 
+        // const response = await this.$axios
+        //   .post(CHAT_ID.URI_API, {
+        //     chat_id: CHAT_ID.CHAT_ID,
+        //     parse_mode: "html",
+        //     text: msg,
+        //   })
+    
         const response = await this.$axios
-          .post(CHAT_ID.URI_API, {
-            chat_id: CHAT_ID.CHAT_ID,
+          .post(process.env.VUE_APP_URI_API, {
+            chat_id: process.env.VUE_APP_CHAT_ID,
             parse_mode: "html",
             text: msg,
           })

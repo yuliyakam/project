@@ -3,7 +3,7 @@
     <meta name="robots" content="noindex, nofollow" />
   </head>
   <HeaderComp />
-  <div class="page404">
+  <div class="page404 center">
     <h2 class="page404__title">404</h2>
     <p class="page404__text">
       Извините, но страница, которую вы запрашиваете, не найдена
