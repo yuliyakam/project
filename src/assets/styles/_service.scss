@@ -1,5 +1,5 @@
-@import 'mixins';
-@import 'vars';
+@import "mixins";
+@import "vars";
 .service_group {
   margin: 0 auto;
   padding: 40px 10px;
@@ -15,21 +15,27 @@
     max-width: 700px;
     margin: 0 auto;
     margin-bottom: 20px;
-    font-size: 18px;
+    font-size: clamp(18px, 5vw, 22px);
+    line-height: 130%;
     text-shadow: 2px 2px 5px #defc5a;
   }
-  }
-  .cost {
-    margin-top: 15px;
-    color: #9c0803;
-    font-size: 18px;
-    font-weight: 700;
-  }
-  .more {   
-    font-size: 18px;
-    font-weight: 700;   
-    padding: 10px; 
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.00) 0.01%, #FABA3E 62.36%);
-    margin-top: 40px;
-    margin-bottom: 20px;
-  }
+}
+.cost {
+  margin-top: 15px;
+  color: #9c0803;
+  font-size: 18px;
+  font-weight: 700;
+}
+.more {
+  font-size: 18px;
+  font-weight: 700;
+  padding: 10px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0) 0.01%,
+    #faba3e 62.36%
+  );
+  margin-top: 40px;
+  margin-bottom: 20px;
+}

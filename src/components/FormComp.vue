@@ -9,7 +9,7 @@
       >Поле должно быть заполнено
     </small>
     <label class="form__lable"
-      >Ваш номер телефона
+      >Ваш номер 
       <input
         type="tel"
         placeholder="В виде 900 000 00 00"
@@ -41,12 +41,12 @@
       >
     </div>
     <router-link class="footer__link" :to="'/privacyPolicy'" rel="nofollow"
-      >Политика конфиденциальности</router-link
+      >&#8594; Политика конфиденциальности</router-link
     >
     <button :disabled="!formData.flag" class="form__btn" type="submit">
       Отправить
     </button>
-    <small class="form__lable"
+    <small 
       >Если данные будут успешно отправлены, Вы увидите сообщение об этом</small
     >
   </form>
