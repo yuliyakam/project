@@ -33,11 +33,9 @@ a {
     padding-right: calc(50% - $siteWidth/2);
 }
 
-.content {
-   
+.content {   
     background-image: url(../images/fon1.jpg);
-    filter: saturate(50%);
-    // height: 100vh;
+    filter: saturate(50%);    
     padding-top: 40px;
     padding-bottom: 75px;
 }
